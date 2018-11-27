@@ -18,3 +18,5 @@
 * docker build -t  alpine-ffmpeg-oss .
 
 
+
+目前采用的integration文件夹下的dockerfile，没有分层
