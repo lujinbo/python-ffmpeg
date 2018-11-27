@@ -1,0 +1,17 @@
+services:
+        image: python-ffmpeg-supervisor:v1
+        container_name: ffmpeg
+        # 更友好的自重启
+        restart: unless-stopped
+        # 环境变量
+        environment:
+                TZ: 'Asia/Shanghai'
+        ports:
+                - "6000:5000"
+        # 映射挂载
+        volumes:
+                - "/etc/hosts:/etc/hosts"
+                - "/www/vcservice.xuemao.com/:/var/www/html/vcservice.xuemao.com"
+                - "/data/vcservice/config_db.py:/var/www/html/vcservice.xuemao.com/app/config_db.py:ro"
+                - "/data/vcservice/loading.webm:/var/www/html/vcservice.xuemao.com/app/loading.webm"
+                - "/data/videos/:/data/videos/"
